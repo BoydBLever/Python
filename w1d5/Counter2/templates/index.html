@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Counter</title>
+</head>
+
+
+<body>
+    <div id="counter">
+        <h1>Counter</h1>
+        <!-- display counter in session using jinja-->
+        <h2>{{session['counter']}} page views</h2>
+
+        <a href="/destroy_session">
+            <button class="reset button">RESET</button>
+        </a>
+    </div>
+</body>
+
+</html>
