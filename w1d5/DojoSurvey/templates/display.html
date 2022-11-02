@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Dojo Survey Results</title>
+</head>
+
+<body>
+    <h1>Submitted Info</h1>
+    <div>
+        <h2>Name:</h2>
+        <h2>{{session['name']}}</h2>
+    </div>
+    <div>
+        <h2>Dojo Location:</h2>
+        <h2>{{session['location']}}</h2>
+    </div>
+    <div>
+        <h2>Favorite Language:</h2>
+        <h2>{{session['language']}}</h2>
+    </div>
+    <div>
+        <h2>Comment:</h2>
+        <h2>{{session['comment']}}</h2>
+    </div>
+    <button type="submit">Go Back</button>
+</body>
+
+</html>
