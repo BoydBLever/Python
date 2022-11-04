@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+</head>
+
+<body>
+    <div id="top">
+        <h1>Add a New User</h1> <a href="/">Home</a>
+    </div>
+    <form action='/create/users' method='post'>
+        <!--which route do I want to send this information to? The post route. -->
+            <label for='first_name'>First Name:</label>
+            <input type='text' name='first_name'>
+            <br>
+            <label for='last_name'>Last Name:</label>
+            <input type='text' name='last_name'>
+            <br>
+            <label for='email'>Email: </label>
+            <!--for and name become the keys in the request dictionary in users.py-->
+            <input type='text' name='email'>
+            <br>
+        <!-- The for and the name on the form must match the names of the table columns-->
+        <button type='submit' value='create user' class="btn btn-primary">Create</button>
+    </form>
+
+
+</body>
+
+</html>
