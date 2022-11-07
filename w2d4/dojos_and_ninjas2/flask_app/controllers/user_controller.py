@@ -2,7 +2,8 @@ from flask import render_template, redirect, request, session, flash
 
 from flask_app import app
 
-from user import User
+from flask_app.models.user_model import User
+#go to flask_app folder, go to models folder, go to this file, and then import class User
 
 @app.route('/')
 def index():
