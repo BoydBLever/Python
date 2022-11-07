@@ -3,7 +3,7 @@ from flask_app.config.mysqlconnection import connectToMySQL
 from flask import remder_template, redirect, request, session
 from flask_app import app
 
-from burger import Burger
+from flask_app.models.burger import Burger
 
 
 class Burger:
