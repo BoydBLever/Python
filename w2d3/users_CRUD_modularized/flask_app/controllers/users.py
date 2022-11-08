@@ -7,9 +7,8 @@ from flask_app import app
 @app.route('/')
 def index():
     return render_template('create.html')
-
-
 # like the middle man, it will get the information from create
+
 @app.route('/create/users', methods=['POST'])
 def create_user():  # the form from '/' will be sent to this route because it is a post route
     data = {
@@ -17,7 +16,7 @@ def create_user():  # the form from '/' will be sent to this route because it is
         "last_name": request.form['last_name'],
         "email": request.form['email']
     }  # the information is captured from the form, we created this dictionary, then we save the whole object
-    User.save(data)  # I could pass request.form into save
+    User.save(data)  # I could pass request.form into save, like save(request.form['name'])
     return redirect('/users')
 
 
