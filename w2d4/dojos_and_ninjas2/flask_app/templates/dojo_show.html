@@ -7,12 +7,16 @@
     <title>Index</title>
 </head>
 <body>
-    <h1>{{dojo.name}}</h1>
+    <h1>{{ninjas[0].name}}</h1>
     {% for ninja in ninjas %}
     First name: {{ninja.first_name}}
-    Last name: {{ninja.first_name}}
+    <br>
+    Last name: {{ninja.last_name}}
+    <br>
     Age: {{ninja.age}}
+    <br>
     Member since: {{ninja.created_at}}
+    <br>
     {% endfor %}
 </body>
 </html>

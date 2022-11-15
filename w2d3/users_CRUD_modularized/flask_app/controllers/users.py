@@ -59,4 +59,4 @@ def editpage(id):
     data = {
         "id":id
     }
-    return render_template('edit.html', user=data)
+    return render_template('edit.html', user=User.get_one(data))

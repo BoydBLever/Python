@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Redirect back to show error messages.-->
+    <!--User must be logged in to see this page-->
+    <!--All fields required-->
+    <!--Name, description, and instructions must be at least 3 characters-->
+    <h1>Add a New Recipe</h1>
+    <!--link back to recipes-->
+    <a href="/recipes">Recipes</a>
+    <!--logout button-->
+    <a href="/">Logout</a>
+    <div id="bigbox">
+        <form action="/createrecipe" method="post">
+            <label for="name">Name</label>
+            <input type="text" name="name" value="PB & J">
+            <label for="description">Description (255 characters or less)</label>
+            <textarea name="description" cols="20" rows="3"></textarea>
+            <label for="instruction">Instruction (</label>
+            <textarea name="instruction" cols="20" rows="3"></textarea>
+
+            <label for="date">Date Cooked/Made:</label>
+            <input type="date" name="date" value="2022-11-08">
+            <p>Under 30 minutes</p>
+            <input type="radio" name="under_30" value="yes" id="yes">
+            <label for="yes">Yes</label>
+            <input type="radio" name="under_30" value="no" id="no">
+            <label for="no">No</label>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+
+</html>

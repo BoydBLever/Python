@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+</head>
+<body>
+    <!--1. User must be logged in to view this page-->
+    <!--2. Only show edit and delete links if the recipe was created by the logged in user-->
+    <!--3. Delete link: removes the recipe and redirects back to this page-->
+    <!--4. Edit link: renders the edit page for that recipe-->
+    <!--5. View recipe link: renders the recipe details page for that recipe-->
+    <h1>Welcome, {{user.first_name}}</h1>
+    <a href="/logout">Logout</a>
+    <a href="/recipes/new">+Create</a>
+    <h2>All posted recipes:</h2>
+    <!--Create link: renders the create page-->
+    <!--Logout link: clears the user session, redirects to the login page-->
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Under 30</th>
+            <th>Posted By</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for recipe in recipes %}
+        <tr>
+            <td>{{ recipe.name }}</td>
+            <td>{{ recipe.under_30 }}</td>
+            <td>{{ recipe.first_name }} {{ recipe.last_name }}</td>
+            <td><a href="/recipes/{{id}}">View Recipe</a>
+                {% if session['user_id'] == recipe.user_id %}
+                <a href="/recipes/edit/{{id}}">|Edit|</a>
+                <a href="/delete">Delete</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+</body>
+</html>

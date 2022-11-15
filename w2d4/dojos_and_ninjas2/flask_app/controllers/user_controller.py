@@ -22,5 +22,25 @@ def dojos():
 
 @app.route('/dojos/<int:id>')
 def show_dojo(id):#include id
-    all_ninjas = Ninja.all_ninjas()
+    data = {
+        "dojo_id":id
+    }
+    all_ninjas = Ninja.all_ninjas(data) #get_dojo_with_ninjas
+    print(all_ninjas)
     return render_template('dojo_show.html', ninjas=all_ninjas)
+
+@app.route('/ninjas/add', methods=['POST']) #this is the route that accepts all that information from new ninja template
+def add_ninja():
+    data = {
+        "dojo_id":request.form['dojo_id'],
+        "first_name":request.form['first_name'],
+        "last_name":request.form['last_name'],
+        "age":request.form['age']
+    }
+    Ninja.new_ninja(data)
+    return redirect('/')
+
+@app.route('/ninjas')
+def new_ninja():
+    all_dojos = Dojo.all_dojos()
+    return render_template('ninjas.html', dojos=all_dojos)
